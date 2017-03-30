@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('form').submit(function(){
+        var firstnamevalue=$('#firstname_input:text').val();
+        var lastnamevalue=$('#lastname_input:text').val();
+        var emailvalue=$('#email_input:text').val();
+        var contactvalue=$('#contact_input:text').val();
+        $('table').append('<tr><td>'+firstnamevalue+'</td><td>'+lastnamevalue+'</td><td>'+emailvalue+'</td><td>'+contactvalue+'</td></tr>');
+
+        return false;
+      })
+
+
+
+
+    })
+    </script>
+    <style type="text/CSS">
+    *{
+      margin: auto;
+      text-align:left;
+    }
+    table{
+      margin-top:50px;
+      border: 2px solid black;
+      width:700px;
+      margin-left:0px;
+    }
+    h1{
+      margin:50px 0px;
+      width:250px;
+      border-bottom:1px solid black;
+    }
+
+    #firstname_input, #lastname_input, #email_input{
+      margin-left:12px;
+      margin-bottom:10px;
+    }
+    #email_input{
+      margin-left:40px;
+    }
+    #add_user{
+      margin-top:50px;
+      margin-left:176px;
+    }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr id='intro'>
+        <th id="first_name">First Name</th>
+        <th id="last_name">Last Name</th>
+        <th id="email">Email Address</th>
+        <th id="contact">Contact #</th>
+      </tr>
+    </table>
+    <h1>Add User</h1>
+    <form class="form" action="" method="post">
+      First name: <input type='text' id='firstname_input' name='first_name'><br>
+      Last name: <input type='text' id='lastname_input' name='last_name'><br>
+      Email: <input type='text' id='email_input' name='email'><br>
+      Contact No.: <input type='text' id='contact_input' name='contact'><br>
+      <input type='submit' id='add_user' value='Add User'>
+    </form>
+  </body>
+</html>
